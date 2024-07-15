@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.canvas-container {
+    margin-right: 20px;
+}
+
+#canvas {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#clear-btn, #predict-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#clear-btn:hover, #predict-btn:hover {
+    background-color: #3e8e41;
+}
+
+.prediction-container {
+    margin-left: 20px;
+}
+
+#prediction {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
