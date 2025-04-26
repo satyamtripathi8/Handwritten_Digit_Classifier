@@ -1,52 +1,164 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.container {
     padding: 20px;
 }
 
-.canvas-container {
-    margin-right: 20px;
-}
-
-#canvas {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#clear-btn, #predict-btn {
-    background-color: #4CAF50;
-    color: #fff;
+.card {
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
 }
 
-#clear-btn:hover, #predict-btn:hover {
-    background-color: #3e8e41;
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px 15px 0 0 !important;
+    padding: 20px;
 }
 
-.prediction-container {
-    margin-left: 20px;
+.card-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
-#prediction {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
+/* Drawing Canvas Styles */
+.canvas-container {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    cursor: crosshair;
+}
+
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.divider:before,
+.divider:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.divider:before {
+    left: 0;
+}
+
+.divider:after {
+    right: 0;
+}
+
+.divider span {
+    background-color: white;
+    padding: 0 10px;
+    position: relative;
+    color: #666;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+}
+
+.alert {
+    margin-bottom: 0;
+}
+
+.result {
+    margin-top: 20px;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.result.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.highlight {
+    background-color: #f8f9fa;
+    border: 2px dashed #007bff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-header h1 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+
+    .canvas-container {
+        width: 100%;
+    }
+
+    #drawingCanvas {
+        width: 100%;
+        height: auto;
+    }
 }
